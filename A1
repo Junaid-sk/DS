@@ -1,0 +1,44 @@
+import pandas as pd
+data=pd.read_csv("C:/Users/saurabh/Desktop/TE Practical Exam/DSBDA/Q1 Merge Sort Facebook data set/dataset_Facebook.csv", sep=';')
+
+
+data
+
+
+subset1=data.loc[0:4,['like','share']]
+
+
+subset1
+
+
+subset2=data.loc[5:9,['like','share']]
+
+
+subset2
+
+
+data1 = pd.concat([subset1,subset2])
+
+
+data1
+
+
+data1.sort_values('like')
+
+
+data2=data1.T
+
+
+data2
+
+
+data.shape
+
+
+data3=data.pivot(columns='share', values='like')
+
+
+data3
+
+
+data3.fillna(10)
